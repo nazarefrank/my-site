@@ -1,0 +1,11 @@
+<!doctype html>
+<meta charset="utf-8">
+<script>
+// Redirect unknown routes back to index.html (helpful for SPAs)
+var redirect = sessionStorage.redirect;
+if (redirect) {
+sessionStorage.removeItem('redirect');
+history.replaceState(null, null, redirect);
+}
+window.location.replace('/');
+</script>
